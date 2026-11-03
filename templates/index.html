@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Feature Input Form</title>
+    <link rel="stylesheet" href="../static/main.css">
+</head>
+<body>
+    <h2>Network Feature Input Form</h2>
+    <form method="GET" action="/submit">
+
+
+        <!-- Basic Connection Details -->
+        <fieldset>
+            <legend>Basic Connection Details</legend>
+            <label for="duration">Duration:</label><br>
+            <input type="number" name="duration" id=""><br><br>
+
+            <label for="protocol_type">Protocol Type:</label><br>
+            <select name="protocol_type" id="protocol_type">
+                <option value="0">ICMP</option>
+                <option value="1">TCP</option>
+                <option value="2">UDP</option>
+            </select><br><br>
+
+            <label for="flag">Flag:</label><br>
+            <select name="flag" id="flag">
+                <option value="0">SF</option>
+                <option value="1">SO</option>
+                <option value="2">REJ</option>
+                <option value="3">RSTR</option>
+                <option value="4">RSTO</option>
+                <option value="5">SH</option>
+                <option value="6">S1</option>
+                <option value="7">S2</option>
+                <option value="8">RSTOSO</option>
+                <option value="9">s3</option>
+                <option value="10">other</option>
+            </select>
+            
+            <br><br>
+
+            <label for="src_bytes">Source Bytes:</label><br>
+            <input type="number" id="src_bytes" name="src_bytes"><br><br>
+
+            <label for="dst_bytes">Destination Bytes:</label><br>
+            <input type="number" id="dst_bytes" name="dst_bytes"><br><br>
+        </fieldset>
+        <br>
+
+        <!-- Error and Fragmentation Details -->
+        <fieldset>
+            <legend>Error and Fragmentation Details</legend>
+            <label for="land">Land:</label><br>
+            <select name="land" id="land">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select><Br><br>
+
+            <label for="wrong_fragment">Wrong Fragment:</label><br>
+            <select name="wrong_fragment" id="wrong_fragment">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+            <br><br>
+
+            <label for="urgent">Urgent:</label><br>
+            <select name="urgent" id="urgent">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+            <br><br>
+            <label for="hot">Hot:</label><br>
+            <input type="range" min="0" max="30" id="hot" name="hot"><br><br>
+        </fieldset>
+        <br>
+
+        <!-- Login and Authentication -->
+        <fieldset>
+            <legend>Login and Authentication</legend>
+            <label for="num_failed_logins">Number of Failed Logins:</label><br>
+            <select name="num_failed_logins" id="num_failed_logins">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>    
+                <option value="4">4</option>
+                <option value="5">5</option>             
+            </select>
+            <br><br>
+
+            <label for="logged_in">Logged In:</label><br>
+            <select name="logged_in" id="logged_in">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select><Br><br>            
+
+            <label for="is_host_login">Is Host Login:</label><br>
+            <select name="is_host_login" id="is_host_login">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select><Br><br>
+
+            <label for="is_guest_login">Is Guest Login:</label><br>
+            <select name="is_guest_login" id="is_guest_login">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select><Br><br>
+        </fieldset>
+        <br>
+
+        <!-- Compromise and Access Attempts -->
+        <fieldset>
+            <legend>Compromise and Access Attempts</legend>
+            <label for="num_compromised">Number of Compromised:</label><br>
+            <input type="number" id="num_compromised" name="num_compromised"><br><br>
+
+            <label for="root_shell">Root Shell:</label><br>
+            <select name="root_shell" id="root_shell">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select><Br><br>
+
+            <label for="su_attempted">SU Attempted:</label><br>
+            <select name="su_attempted" id="su_attempted">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select><Br><br>
+
+            <label for="num_file_creations">Number of File Creations:</label><br>
+            <input type="number" id="num_file_creations" name="num_file_creations"><br><br>
+
+            <label for="num_shells">Number of Shells:</label><br>
+            <select name="num_shell" id="num_shell">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select><Br><br>
+
+            <label for="num_access_files">Number of Access Files:</label><br>
+            <select name="num_access_files" id="num_access_files">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+            </select><Br><br>
+
+            <!-- <label for="num_outbound_cmds">Number of Outbound Commands:</label><br> -->
+            <input type="hidden" id="num_outbound_cmds" name="num_outbound_cmds" value="0">
+
+        </fieldset>
+        <br>
+
+        <!-- Traffic and Service Rates -->
+        <fieldset>
+            <legend>Traffic and Service Rates</legend>
+            <label for="count">Count:</label><br>
+            <input type="number" id="count" name="count"><br><br>
+
+            <label for="srv_count">Service Count:</label><br>
+            <input type="number" id="srv_count" name="srv_count"><br><br>
+
+            <label for="serror_rate">SYN Error Rate:</label><br>
+            <input type="range" min="0" max="1" step="0.1" id="serror_rate" name="serror_rate"><br><br>
+
+            <label for="rerror_rate">REJ Error Rate:</label><br>
+            <input type="range" min="0" max="1" step="0.1" id="rerror_rate" name="rerror_rate"><br><br>
+
+            <label for="same_srv_rate">Same Service Rate:</label><br>
+            <input type="range" min="0" max="1" step="0.1" id="same_srv_rate" name="same_srv_rate"><br><br>
+
+            <label for="diff_srv_rate">Different Service Rate:</label><br>
+            <input type="range" min="0" max="1" step="0.1" id="diff_srv_rate" name="diff_srv_rate"><br><br>
+
+            <label for="srv_diff_host_rate">Service Different Host Rate:</label><br>
+            <input type="range" min="0" max="1" step="0.1" id="srv_diff_host_rate" name="srv_diff_host_rate"><br><br>
+        </fieldset>
+        <br>
+
+        <!-- Destination Host Details -->
+        <fieldset>
+            <legend>Destination Host Details</legend>
+            <label for="dst_host_count">Destination Host Count:</label><br>
+            <input type="number" id="dst_host_count" name="dst_host_count"><br><br>
+
+            <label for="dst_host_srv_count">Destination Host Service Count:</label><br>
+            <input type="number" id="dst_host_srv_count" name="dst_host_srv_count"><br><br>
+
+            <label for="dst_host_diff_srv_rate">Destination Host Different Service Rate:</label><br>
+            <input type="range" min="0" max="1" step="0.1" id="dst_host_diff_srv_rate" name="dst_host_diff_srv_rate"><br><br>
+
+            <label for="dst_host_same_src_port_rate">Destination Host Same Source Port Rate:</label><br>
+            <input type="range" min="0" max="1" step="0.1" id="dst_host_same_src_port_rate" name="dst_host_same_src_port_rate"><br><br>
+
+            <label for="dst_host_srv_diff_host_rate">Destination Host Service Different Host Rate:</label><br>
+            <input type="range" min="0" max="1" step="0.1" id="dst_host_srv_diff_host_rate" name="dst_host_srv_diff_host_rate"><br><br>
+        </fieldset>
+        <br>
+
+        <div id="submit"><button  type="submit">Submit</button></div>
+    </form>
+</body>
+</html>
